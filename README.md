@@ -40,30 +40,5 @@ This project is a smart street light system simulation based on **Arduino Uno**.
 - **Relay NO Terminal** $\rightarrow$ **Resistor** $\rightarrow$ **Anode (Long Leg)** of 6 LEDs
 - **Cathode (Short Leg)** of 6 LEDs $\rightarrow$ **Adapter Negative (-)** & **Arduino GND**
 
----
-
-## 💻 Source Code (Sketch)
-
-```cpp
-const int ldrPin   = A0;  // LDR sensor connected to Analog A0
-const int relayPin = 9;   // Relay module connected to Digital 9
-int lightData      = 0;   // Variable to store light intensity levels
-
-void setup() {
-  pinMode(relayPin, OUTPUT);
-  Serial.begin(9600);     // Initialize serial communication for monitoring
-}
-
-void loop() {
-  lightData = analogRead(ldrPin);
-  
-  // Logic: If it's Dark (threshold > 700), activate the Relay
-  // Adjust the threshold (700) based on your room's light condition
-  if (lightData > 700) { 
-    digitalWrite(relayPin, HIGH); // Relay ON (Lights ON)
-  } else {
-    digitalWrite(relayPin, LOW);  // Relay OFF (Lights OFF)
-  }
-  
-  delay(300); // 300ms read interval
-}
+![Image 1](./images/board1.jpg)
+![Image 2](./images/board2.jpg)
